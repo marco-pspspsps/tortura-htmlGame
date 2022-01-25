@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="UIdoGame.css">
+        <title>Tortura</title>
+    </head>
+
+    <body>
+		
+		<div id="infoGame">
+		
+		<h2>Bem-vindo ao sofrimento</h2>
+		
+		<strong>'P' para pausar<br></strong>
+		<strong>Setas e Mouse para se mover<br></strong>
+		<strong>Fuja para se salvar<br></strong>
+		
+		<p>Hahaha brinks, não dá pra se salvar(não programei isso).<br>
+		Mas dá pra morrer rico: Pegue o máximo de moedas sem morrer.<br>
+		Você tem 5 vidas, use-as com cautela.<br><br>
+		Os fantasmas atravessam paredes e tentam te matar, mas são lentos.<br>
+		Cuidado com a Boca Maldita!<br>
+		Ela bloqueia seus caminhos e tenta te comer, nham nham.<br><br>
+		Mantenha sua energia bebendo Red Bull:<br>
+		Não te dá asas, mas te dá um gás.<br>
+		Por último, cuidado com a escuridão...<br>
+		
+		</div>
+		
+		<div>
+			<canvas id="minhaObra" width="600" height="600"></canvas>
+			<canvas id="playerVision" width="600" height="600"></canvas>
+		</div>
+		
+        <div id="valores">Energia pra fugir: <progress id="vida" value="0" max="3000"></progress> &nbsp&nbsp&nbsp&nbspMoedas: <span id="moedas">0</span> &nbsp&nbsp&nbspVidas: <span id="vidas">5</span> </div>
+		
+    </body>
+
+    <script type="text/javascript" src="jogo.js"></script>
+</html>
