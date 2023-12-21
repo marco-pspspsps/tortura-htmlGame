@@ -29,10 +29,11 @@ const GHOST2XSTART = 12;
 const GHOST2YSTART = 3;
 const GHOST3XSTART = 2;
 const GHOST3YSTART = 12;
-const GHOSTDELAY = 105;
+const GHOSTDELAY = 305;
 const GHOSTFULLSPEED = 70;
 const NEARGRADIENTSETTLER = 40;
 const FARGRADIENTSETTLER = 250;
+const GRADIENTSPEED = 2;
 const MAPSIZE = 600;
 const LASTDITCHSETTLER = 80;
 const PAUSEBUTTONLATENCY = 20;
@@ -165,6 +166,7 @@ function update() {
 	
 	if(gameRunning && !gamePaused){
 		
+		gameThemeMusic.play();
 		if(playerMoving) movePlayer();
 		handlers();
 		gameTime++;
@@ -233,7 +235,7 @@ function pauseHandler(){
 
 function setVisionGradient(){
 	
-	var calcEscuridao = FARGRADIENTSETTLER - (gameTime/VISIONTIMEREDUCER);
+	var calcEscuridao = FARGRADIENTSETTLER - (gameTime*GRADIENTSPEED/VISIONTIMEREDUCER);
 	if(calcEscuridao < LASTDITCHSETTLER) calcEscuridao = LASTDITCHSETTLER;
 	visionGradient = visionDrawer.createRadialGradient(playerX+HALFTILESIZE, playerY+HALFTILESIZE, NEARGRADIENTSETTLER, playerX+HALFTILESIZE, playerY+HALFTILESIZE, calcEscuridao);
 	visionGradient.addColorStop(0, 'rgba(0,0,0,0)');
